@@ -1,5 +1,5 @@
 'use client'
-import { GlobalContext } from "@/app/context"
+import { GlobalContext } from '../../context/index'
 
 const GlobalState = ({ children }: { children: any }) => {
     return (
