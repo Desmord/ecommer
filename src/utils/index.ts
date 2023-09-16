@@ -46,5 +46,7 @@ export const adminNavOptions: NavOptionsType[] = [
 ]
 
 export const styles = {
-    button: `mt-1.5 inline-block bg-black px-5 py-2 text-xs font-medium upprcase tracking-wide text-white`
+    button: `mt-1.5 inline-block text-white bg-black px-5 py-2
+            text-xs font-medium upprcase tracking-wide text-white transition-all
+            hover:bg-opacity-70`
 }
