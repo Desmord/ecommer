@@ -1,31 +1,39 @@
 'use client'
 
-import { Fragment } from "react";
+import { Fragment, useContext } from "react";
 import { styles } from "@/utils/index";
+import { FaBagShopping } from 'react-icons/fa6';
 
 import NavItems from "./NavItems";
+import NavBarModal from "./NavBarModal";
+import { GlobalContext } from "@/context";
 
-type UserType = {
+type UserProps = {
     role: `admin`
 }
 
 const isAdminView = false;
 const isAuthUser = false;
-const user: UserType = {
+const user: UserProps = {
     role: `admin`
 }
 
+
 const Navbar = () => {
+
+    const { showNavModal, setShowNavModal } = useContext(GlobalContext)
+
     return (
         <>
             <nav className="bg-white fixed w-full z-20 top-0 left-0 border-b border-gray-200">
                 <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
                     <div className="flex items-center cursor-pointer">
-                        <span className="self-center text-2xl font-semibold whitespace-nowrap">
+                        <span className="flex justify-center items-center gap-3 self-center text-2xl font-semibold whitespace-nowrap">
                             Ecommerce
+                            <span className="hidden lg:block"><FaBagShopping /></span>
                         </span>
                     </div>
-                    <div className="flex md:order-2 gap-2">
+                    <div className="flex md:order-2 gap-1">
                         {
                             !isAdminView && isAuthUser ?
                                 <Fragment>
@@ -51,11 +59,13 @@ const Navbar = () => {
                             data-collapse-toggle="navbar-sticky"
                             type="button"
                             className="
-                                inline-flex items-center p-2 text-sm text-gray-500 rounded-lg md:hidden
-                                hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200
-                                dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+                                inline-flex items-center p-2 ml-2 text-sm text-gray-500 rounded-lg md:hidden
+                                hover:bg-gray-100 focus:outline-none
+                                dark:text-gray-500 dark:hover:bg-gray-900 dark:hover:text-gray-200 
+                                transition-all"
                             aria-controls="navbar-sticky"
-                            aria-expanded="false">
+                            aria-expanded="false"
+                            onClick={() => setShowNavModal((prev) => !prev)}>
                             <span className="sr-only">Open menu</span>
                             <svg
                                 className="w-6 h-6"
@@ -75,6 +85,7 @@ const Navbar = () => {
                     <NavItems isAdminView={isAdminView} />
                 </div>
             </nav>
+            <NavBarModal showNavModal={showNavModal} isAdminView={isAdminView} />
         </>
     )
 }
