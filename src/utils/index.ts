@@ -45,8 +45,53 @@ export const adminNavOptions: NavOptionsType[] = [
     }
 ]
 
-export const styles = {
-    button: `mt-1.5 inline-block text-white bg-black px-5 py-2
-            text-xs font-medium upprcase tracking-wide text-white transition-all
-            hover:bg-opacity-70`
+export type RegistrationFormControlType = {
+    id: string,
+    type: string,
+    placeholder: string,
+    label: string,
+    componentType: string,
+    options?: {
+        id: string,
+        label: string,
+    }[]
 }
+
+export const registrationFormControls: RegistrationFormControlType[] = [
+    {
+        id: `name`,
+        type: `text`,
+        placeholder: `Enter your name`,
+        label: `Name`,
+        componentType: `input`
+    },
+    {
+        id: `email`,
+        type: `email`,
+        placeholder: `Enter your email`,
+        label: `Email`,
+        componentType: `input`
+    },
+    {
+        id: `password`,
+        type: `password`,
+        placeholder: `Enter your password`,
+        label: `Password`,
+        componentType: `input`
+    },
+    {
+        id: `role`,
+        type: ``,
+        placeholder: ``,
+        label: `Role`,
+        componentType: `select`,
+        options: [{
+            id: `admin`,
+            label: `Admin`,
+        }, {
+            id: `customer`,
+            label: `Customer`,
+        }]
+    },
+
+]

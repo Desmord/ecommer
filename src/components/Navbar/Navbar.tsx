@@ -1,7 +1,6 @@
 'use client'
 
 import { Fragment, useContext } from "react";
-import { styles } from "@/utils/index";
 import { FaBagShopping } from 'react-icons/fa6';
 
 import NavItems from "./NavItems";
@@ -14,6 +13,11 @@ type UserProps = {
 
 const isAdminView = false;
 const isAuthUser = false;
+const styles = {
+    button: `mt-1.5 inline-block text-white bg-black px-5 py-2
+    text-xs font-medium upprcase tracking-wide text-white transition-all
+    hover:bg-opacity-70`
+}
 const user: UserProps = {
     role: `admin`
 }
