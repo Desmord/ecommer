@@ -45,7 +45,7 @@ export const adminNavOptions: NavOptionsType[] = [
     }
 ]
 
-export type RegistrationFormControlType = {
+export type FormControlType = {
     id: string,
     type: string,
     placeholder: string,
@@ -57,7 +57,7 @@ export type RegistrationFormControlType = {
     }[]
 }
 
-export const registrationFormControls: RegistrationFormControlType[] = [
+export const registrationFormControls: FormControlType[] = [
     {
         id: `name`,
         type: `text`,
@@ -94,4 +94,21 @@ export const registrationFormControls: RegistrationFormControlType[] = [
         }]
     },
 
+]
+
+export const loginFormControlls: FormControlType[] = [
+    {
+        id: `email`,
+        type: `email`,
+        placeholder: `Enter your email`,
+        label: `Email`,
+        componentType: `input`
+    },
+    {
+        id: `password`,
+        type: `password`,
+        placeholder: `Enter your password`,
+        label: `Password`,
+        componentType: `input`
+    },
 ]

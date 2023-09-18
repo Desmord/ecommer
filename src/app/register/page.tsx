@@ -1,5 +1,5 @@
 'use client'
-import { registrationFormControls, RegistrationFormControlType } from "@/utils";
+import { registrationFormControls, FormControlType } from "@/utils";
 
 import Input from "@/components/FormElements/InputComponent/Input";
 import Select from "@/components/FormElements/SelectComponent/Select";
@@ -37,7 +37,7 @@ const Register = () => {
                                     </button> :
                                     <div className="w-full mt-6 mr-0 ml-0 relative space-y-8">
                                         {
-                                            registrationFormControls.map((item: RegistrationFormControlType) => (
+                                            registrationFormControls.map((item: FormControlType) => (
                                                 item.componentType === `input` ?
                                                     <Input
                                                         key={item.id}
